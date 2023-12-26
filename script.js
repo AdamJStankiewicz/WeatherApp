@@ -3,13 +3,12 @@ var curTemperature;
 function weatherClick(dwn){
     const btn = document.getElementById("wtherBtn");
     if(dwn){
-       // btn.style.backgroundColor = "orange";
         btn.classList.add("animate");
         setTimeout(removeAnim,250);
     }
     else{
         btn.style.backgroundColor = "#00b8c9";
-        //getWeather()
+        getWeather()
     }
 
 }
