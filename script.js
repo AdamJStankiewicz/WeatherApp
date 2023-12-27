@@ -4,11 +4,11 @@ function weatherClick(dwn){
     const btn = document.getElementById("wtherBtn");
     if(dwn){
         btn.classList.add("animate");
-        setTimeout(removeAnim,250);
     }
     else{
         btn.style.backgroundColor = "#00b8c9";
-        getWeather()
+        getWeather();
+        setTimeout(removeAnim,250);
     }
 
 }
@@ -19,7 +19,9 @@ function removeAnim(){
 }
 
 async function getWeather(){
+    getCoordinates();
 
+    console.log("Running?");
     let obj;
     
     const res = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=38.2266178&lon=-85.7208747&appid=1aa8bbe615945e439d974fb3504738ee&units=imperial");
@@ -29,4 +31,12 @@ async function getWeather(){
     curTemperature = obj["main"]["temp"];
 
     document.getElementById("temperature").textContent = "The current temperature is: " +  curTemperature + "F";
+}
+
+async function getCoordinates() {
+    const apiUrl = await fetch("https://us1.locationiq.com/v1/search?key=pk.143ca4fe36f259c3ed41b80e7ddb7835&q=Lousville%2C%20KY&format=json");
+    let data = await apiUrl.json();
+    let latitude = data[0].lat;
+    let longitude = data[0].lon;
+    document.getElementById("latlong").textContent = "Lat: " + latitude + " Long: " + longitude;
 }
