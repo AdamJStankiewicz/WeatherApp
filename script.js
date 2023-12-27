@@ -19,12 +19,14 @@ function removeAnim(){
 }
 
 async function getWeather(){
-    getCoordinates();
+    var latlong = await getCoordinates();
+    var lat = latlong[0], 
+        long = latlong[1];
 
-    console.log("Running?");
+    console.log("CONSOLE: Lat: " + lat + " Long: " + long);
     let obj;
-    
-    const res = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=38.2266178&lon=-85.7208747&appid=1aa8bbe615945e439d974fb3504738ee&units=imperial");
+
+    const res = await fetch("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=1aa8bbe615945e439d974fb3504738ee&units=imperial");
 
     obj = await res.json();
 
@@ -39,4 +41,5 @@ async function getCoordinates() {
     let latitude = data[0].lat;
     let longitude = data[0].lon;
     document.getElementById("latlong").textContent = "Lat: " + latitude + " Long: " + longitude;
+    return[latitude,longitude];
 }
