@@ -4,35 +4,107 @@
     src: url(fonts/Mont-HeavyDEMO.otf);
 }
 
+body{
+    background-color: #282828;
+}
+
 .title{
     font-family: mont;
     font-size: 96px;
-    text-shadow: -1px 1px #093261;
-    position: relative;
+    color: white;
+    text-shadow: -5px 5px #093261;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%,-350%);
 }
 
-.weatherLogo{
-    position: relative;
-    top: 0px;
+.cloud{
     animation-name: float;
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%,10%);
 }
 
+.sun{
+    animation-name: float2;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(35%,10%);
+}
+
+
 .button {
+    color: rgb(0, 0, 0);
     font-size: 48px;
     background-color: #00b8c9;
     border-radius: 16px;
     border: None;
     font-family: mont;
     box-shadow: -5px 5px #093261;
-    position: relative;
     height: 80px;
     width: 440px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-150%);
 }
 
-.output{
+.city{
+    font-family: mont;
     font-size: 48px;
+    color: rgb(0, 0, 0);
+    height: 60px;
+    width: 400px;
+    border-radius: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%,-350%);
+}
+
+.state{
+    font-family: mont;
+    font-size: 48px;
+    color: rgb(0, 0, 0);
+    height: 60px;
+    width: 100px;
+    border-radius: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(125%,-350%);
+}
+
+.output1{
+    font-family: mont;
+    font-size: 48px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,30%);
+}
+
+
+.output2{
+    font-family: mont;
+    font-size: 48px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,130%);
 }
 
 .animate {
@@ -43,6 +115,12 @@
 @keyframes float{
     0% {top: 0px;}
     50% {top: -5px;}
+    100% {top: 0px;}
+}
+
+@keyframes float2{
+    0% {top: 0px;}
+    50% {top: -10px;}
     100% {top: 0px;}
 }
 

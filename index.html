@@ -9,12 +9,15 @@
 
 
 <body>
-    <h1 class="title" >Weather
-        <img class="weatherLogo" src="images/WeatherIcon.png" width = "200">
-    </h1>
+    <h1 class="title" >Weather</h1>
+    <img class="sun" src="images/suns.png" width = "300">
+    <img class="cloud" src="images/clouds.png" width = "300">
     <button class="button" id="wtherBtn" onmousedown="weatherClick(true)" onmouseup="weatherClick(false)">Get Weather</button>
-    <div class = "output" id = "temperature"></div>
-    <div class = "output" id = "latlong"></div>
+    <input class="city" type="text" id="city" name="city">
+    <input class="state" type="text" id="state" name="state">
+    <div class = "output1" id = "temperature"></div>
+    <div class = "output2" id = "latlong"></div>
+    <script>init()</script>
 </body>
 
 </html>
