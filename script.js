@@ -7,8 +7,12 @@ function init() {
     var cityInput = document.getElementById("city");
     var stateInput = document.getElementById("state");
 
-    cityInput.setAttribute('value',city);
-    stateInput.setAttribute('value',state);
+    if(cityInput){
+        cityInput.setAttribute('value',city);
+    }
+    if(stateInput){
+        stateInput.setAttribute('value',state);
+    }
     console.log("INITIALIZED!");
 }
 
