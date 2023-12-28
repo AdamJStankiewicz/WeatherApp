@@ -1,7 +1,6 @@
 var curTemperature;
 
 function init() {
-    console.log("INITIALIZED!");
     var city = localStorage['city'];
     var state = localStorage['state'];
 
