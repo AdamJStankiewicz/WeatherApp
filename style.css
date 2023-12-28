@@ -12,7 +12,7 @@ body{
     font-family: mont;
     font-size: 96px;
     color: white;
-    text-shadow: -5px 5px #093261;
+    text-shadow: -3px 3px 5px #000000;
 
     position: absolute;
     top: 50%;
@@ -50,7 +50,7 @@ body{
     border-radius: 16px;
     border: None;
     font-family: mont;
-    box-shadow: -5px 5px #093261;
+    box-shadow: -3px 3px 5px #000000;
     height: 80px;
     width: 440px;
 
@@ -61,32 +61,37 @@ body{
 }
 
 .city{
+    border: None;
     font-family: mont;
     font-size: 48px;
     color: rgb(0, 0, 0);
+    box-shadow: -3px 3px 5px #000000;
     height: 60px;
     width: 400px;
     border-radius: 16px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-75%,-350%);
+    transform: translate(-75%,-360%);
 }
 
 .state{
+    border: None;
     font-family: mont;
     font-size: 48px;
     color: rgb(0, 0, 0);
+    box-shadow: -3px 3px 5px #000000;
     height: 60px;
     width: 100px;
     border-radius: 16px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(125%,-350%);
+    transform: translate(125%,-360%);
 }
 
 .output1{
+    border-radius: 0%;
     font-family: mont;
     font-size: 48px;
     color: white;
