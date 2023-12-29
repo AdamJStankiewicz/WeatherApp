@@ -1,5 +1,7 @@
 var curTemperature;
 
+var geo = true;
+
 function init() {
     var city = localStorage['city'];
     var state = localStorage['state'];
@@ -10,6 +12,7 @@ function init() {
     if(city) cityInput.setAttribute('value',city);
     if(state) stateInput.setAttribute('value',state);
 
+    if(geo) getLocation();
     console.log("INITIALIZED!");
 }
 
@@ -35,7 +38,17 @@ function removeAnim(){
     btn.classList.remove("animate");
 }
 
-async function getWeather(){
+async function getWeatherAuto(lat,long){
+    const res = await fetch("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=1aa8bbe615945e439d974fb3504738ee&units=imperial");
+
+    obj = await res.json();
+
+    curTemperature = Math.round(obj["main"]["temp"]);
+
+    document.getElementById("temperature").textContent = "The current temperature is: " +  curTemperature + "F";
+}
+
+async function getWeatherManual(){
     var cityInput = document.getElementById("city").value;
     var stateInput = document.getElementById("state").value.toUpperCase();
     localStorage['city'] = cityInput;
@@ -68,4 +81,16 @@ async function getCoordinates(city,state) {
     let latitude = data[0].lat;
     let longitude = data[0].lon;
     return[latitude,longitude];
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(setPosition);
+  } 
+}
+
+function setPosition(position) {
+    console.log("Latitude: " + position.coords.latitude + 
+    "Longitude: " + position.coords.longitude);
+    getWeatherAuto(position.coords.latitude,position.coords.longitude);
 }
