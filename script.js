@@ -16,10 +16,6 @@ function init() {
     console.log("INITIALIZED!");
 }
 
-function fillInfo(city,state){
-    document.getElementById("city").value = city;
-}
-
 function weatherClick(dwn){
     const btn = document.getElementById("wtherBtn");
     if(dwn){
@@ -27,7 +23,7 @@ function weatherClick(dwn){
     }
     else{
         btn.style.backgroundColor = "#00b8c9";
-        getWeather();
+        getWeatherManual();
         setTimeout(removeAnim,250);
     }
 
@@ -89,8 +85,25 @@ function getLocation() {
   } 
 }
 
-function setPosition(position) {
+async function setPosition(position) {
+    let response = await fetch("https://api.geoapify.com/v1/geocode/reverse?lat="+position.coords.latitude+"&lon="+position.coords.longitude+"&apiKey=9db07f86b535474abaffd1a6960a0095");
+    let data = await response.json();
+    
+    let city = data.features[0].properties["city"];
+    let state = data.features[0].properties["state"];
+
+    fillInfo(city,state);
+    
     console.log("Latitude: " + position.coords.latitude + 
     "Longitude: " + position.coords.longitude);
+    
     getWeatherAuto(position.coords.latitude,position.coords.longitude);
+}
+
+function fillInfo(city,state){
+    var cityInput = document.getElementById("city");
+    var stateInput = document.getElementById("state");
+
+    cityInput.setAttribute('value',city);
+    stateInput.setAttribute('value',state);
 }
