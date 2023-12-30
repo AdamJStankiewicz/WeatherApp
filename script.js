@@ -90,7 +90,7 @@ async function setPosition(position) {
     let data = await response.json();
     
     let city = data.features[0].properties["city"];
-    let state = data.features[0].properties["state"];
+    let state = data.features[0].properties["state_code"];
 
     fillInfo(city,state);
     
