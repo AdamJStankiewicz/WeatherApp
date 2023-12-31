@@ -1,6 +1,6 @@
 var curTemperature;
 
-var geo = true;
+var geo = false;
 
 function init() {
     var city = localStorage['city'];
@@ -20,13 +20,13 @@ function weatherClick(dwn){
     const btn = document.getElementById("wtherBtn");
     if(dwn){
         btn.classList.add("animate");
+        console.log(document.getElementById("wtherBtn").textContent);
     }
     else{
         btn.style.backgroundColor = "#00b8c9";
         getWeatherManual();
         setTimeout(removeAnim,250);
     }
-
 }
 
 function removeAnim(){
