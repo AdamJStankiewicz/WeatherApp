@@ -42,7 +42,32 @@ async function getWeatherAuto(lat,long){
     curTemperature = Math.round(obj["main"]["temp"]);
 
     document.getElementById("temperature").textContent = "The current temperature is: " +  curTemperature + "F";
-}
+
+    let weatherType = obj.weather[0].main;
+    
+    //find pics for the following
+    switch (weatherType) {
+        case "Thunderstorm":
+            //img = (insert url)
+            break;
+        case "Drizzle":
+            break;
+        case "Rain":
+            let img = "images/RainCloud.png"
+            break;
+        case "Snow":
+            break;
+        case "Clear":
+            break;
+        case "Clouds":
+            break;
+        default:
+            //shows normal logo if its not the other weather types
+            break;
+      }
+    }
+    
+
 
 async function getWeatherManual(){
     var cityInput = document.getElementById("city").value;
@@ -107,3 +132,4 @@ function fillInfo(city,state){
     cityInput.setAttribute('value',city);
     stateInput.setAttribute('value',state);
 }
+
