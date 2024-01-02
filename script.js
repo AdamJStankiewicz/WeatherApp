@@ -19,7 +19,12 @@ function init() {
         document.getElementById("unitBtn").textContent = unitSymbol;
     }
     
-    if(!city && !state) if(geo) getLocation();
+    if(!city && !state) {
+        if(geo) getLocation();
+    }
+    else{
+        getWeatherManual();
+    }
     console.log("INITIALIZED!");
 }
 
