@@ -19,7 +19,7 @@ function init() {
         document.getElementById("unitBtn").textContent = unitSymbol;
     }
     
-    if(geo) getLocation();
+    if(!city && !state) if(geo) getLocation();
     console.log("INITIALIZED!");
 }
 
@@ -53,7 +53,7 @@ async function getWeatherAuto(lat,long){
 
     let weatherType = obj["weather"][0]["main"];
     setIcon(weatherType);
-    }
+}
     
 async function getWeatherManual(){
     var cityInput = document.getElementById("city").value;
