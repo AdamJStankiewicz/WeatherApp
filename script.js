@@ -1,19 +1,22 @@
 var curTemperature;
 var geo = false;
 var unit = "imperial";
-var unitSymbol = "F"
+var unitSymbol = "F";
 
 function init() {
     var city = localStorage['city'];
     var state = localStorage['state'];
-    unit = localStorage['unit'];
-    unitSymbol = localStorage['unitSymbol']
+    
     var cityInput = document.getElementById("city");
     var stateInput = document.getElementById("state");
 
     if(city) cityInput.setAttribute('value',city);
     if(state) stateInput.setAttribute('value',state);
-    
+
+    if(localStorage['unit'] && localStorage['unitSymbol']){
+        unit = localStorage['unit'];
+        unitSymbol = localStorage['unitSymbol'];
+    }
     document.getElementById("unitBtn").textContent = unitSymbol;
     if(geo) getLocation();
     console.log("INITIALIZED!");
