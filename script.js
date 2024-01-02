@@ -1,6 +1,6 @@
 var curTemperature;
 
-var geo = false;
+var geo = true;
 
 function init() {
     var city = localStorage['city'];
@@ -41,7 +41,7 @@ async function getWeatherAuto(lat,long){
 
     curTemperature = Math.round(obj["main"]["temp"]);
 
-    document.getElementById("temperature").textContent = "The current temperature is: " +  curTemperature + "F";
+    document.getElementById("temperature").textContent = curTemperature + "F";
 
     let weatherType = obj["weather"][0]["main"];
     setIcon(weatherType);
@@ -70,7 +70,7 @@ async function getWeatherManual(){
 
     curTemperature = Math.round(obj["main"]["temp"]);
 
-    document.getElementById("temperature").textContent = "The current temperature is: " +  curTemperature + "F";
+    document.getElementById("temperature").textContent = curTemperature + "F";
     //document.getElementById("latlong").textContent = "Lat: " + lat + " Long: " + long;
     
     let weatherType = obj["weather"][0]["main"];

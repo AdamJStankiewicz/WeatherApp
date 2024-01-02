@@ -62,8 +62,8 @@ body {
     height: 80px;
     width: 400px;
     border-radius: 16px;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .state{
@@ -75,7 +75,8 @@ body {
     height: 80px;
     width: 100px;
     border-radius: 16px;
-    margin-bottom: 50px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .icon{
@@ -88,8 +89,9 @@ body {
 }
 
 .output1{
+    margin-top: 5%;
     font-family: mont;
-    font-size: 48px;
+    font-size: 96px;
     color: white;
     text-shadow: -1px 1px 5px #000000;
     text-align: center;
