@@ -16,8 +16,9 @@ function init() {
     if(localStorage['unit'] && localStorage['unitSymbol']){
         unit = localStorage['unit'];
         unitSymbol = localStorage['unitSymbol'];
+        document.getElementById("unitBtn").textContent = unitSymbol;
     }
-    document.getElementById("unitBtn").textContent = unitSymbol;
+    
     if(geo) getLocation();
     console.log("INITIALIZED!");
 }
