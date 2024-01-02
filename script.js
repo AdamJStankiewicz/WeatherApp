@@ -1,47 +1,51 @@
 var curTemperature;
-
-var geo = true;
+var geo = false;
+var unit = "imperial";
+var unitSymbol = "F"
 
 function init() {
     var city = localStorage['city'];
     var state = localStorage['state'];
-
+    unit = localStorage['unit'];
+    unitSymbol = localStorage['unitSymbol']
     var cityInput = document.getElementById("city");
     var stateInput = document.getElementById("state");
 
     if(city) cityInput.setAttribute('value',city);
     if(state) stateInput.setAttribute('value',state);
-
+    
+    document.getElementById("unitBtn").textContent = unitSymbol;
     if(geo) getLocation();
     console.log("INITIALIZED!");
 }
 
 function weatherClick(dwn){
     const btn = document.getElementById("wtherBtn");
+    const rel = document.getElementById("reload");
     if(dwn){
         btn.classList.add("animate");
-        console.log(document.getElementById("wtherBtn").textContent);
+        rel.classList.add("animateSpin");
     }
     else{
-        btn.style.backgroundColor = "#00b8c9";
         getWeatherManual();
-        setTimeout(removeAnim,250);
+        setTimeout(removeAnim,250,"wtherBtn","animate");
+        setTimeout(removeAnim,250,"reload","animateSpin");
     }
 }
 
-function removeAnim(){
-    const btn = document.getElementById("wtherBtn");
-    btn.classList.remove("animate");
+function removeAnim(ele,anim){
+    const btn = document.getElementById(ele);
+    btn.classList.remove(anim);
 }
 
 async function getWeatherAuto(lat,long){
-    const res = await fetch("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=1aa8bbe615945e439d974fb3504738ee&units=imperial");
+    const res = await fetch("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=1aa8bbe615945e439d974fb3504738ee&units="+unit);
 
     obj = await res.json();
 
     curTemperature = Math.round(obj["main"]["temp"]);
 
-    document.getElementById("temperature").textContent = curTemperature + "F";
+    document.getElementById("temperature").textContent = curTemperature + unitSymbol;
 
     let weatherType = obj["weather"][0]["main"];
     setIcon(weatherType);
@@ -64,13 +68,13 @@ async function getWeatherManual(){
     console.log("CONSOLE: Lat: " + lat + " Long: " + long);
     let obj;
 
-    const res = await fetch("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=1aa8bbe615945e439d974fb3504738ee&units=imperial");
+    const res = await fetch("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=1aa8bbe615945e439d974fb3504738ee&units="+unit);
 
     obj = await res.json();
 
     curTemperature = Math.round(obj["main"]["temp"]);
 
-    document.getElementById("temperature").textContent = curTemperature + "F";
+    document.getElementById("temperature").textContent = curTemperature + unitSymbol;
     //document.getElementById("latlong").textContent = "Lat: " + lat + " Long: " + long;
     
     let weatherType = obj["weather"][0]["main"];
@@ -138,4 +142,31 @@ function setIcon(weatherType){
             document.getElementById("img").src = "images/wi-cloud.svg";
             break;
       }
+}
+
+function toggleUnit(dwn){
+    const btn = document.getElementById("unitBtn");
+
+    if(dwn){
+        btn.classList.add("animate");
+    }
+    else{
+        setTimeout(removeAnim,250,"unitBtn","animate");
+    
+
+        if(unit === "imperial"){
+            unitSymbol = "C";
+            unit = "metric";
+            document.getElementById("unitBtn").textContent = unitSymbol;
+        }
+        else {
+            unitSymbol = "F";
+            unit = "imperial";
+            document.getElementById("unitBtn").textContent = unitSymbol;
+        }
+        localStorage['unit'] = unit;
+        localStorage['unitSymbol'] = unitSymbol;
+
+        getWeatherManual();
+    }
 }

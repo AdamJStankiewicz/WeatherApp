@@ -17,10 +17,15 @@
             <input class="city" type="text" id="city" name="city">
             <input class="state" type="text" id="state" name="state" maxlength="2">
         </div>
-        <button class="button" id="wtherBtn" onmousedown="weatherClick(true)" onmouseup="weatherClick(false)">Get Weather</button>
-        <div class="output"></div>
+        
+        <div class = "buttons"></div>
+            <button class="wtherBtn" id="wtherBtn" onmousedown="weatherClick(true)" onmouseup="weatherClick(false)">
+                <img class="reload" id="reload" src="images/reload-symbol.svg" width = "75">
+            </button>
+            <button class="unitBtn" id="unitBtn" onmousedown="toggleUnit(true)" onmouseup="toggleUnit(false)">F</button>
             <div class = "output1" id = "temperature"></div>
         </div>
+
         <div class="footer">
             <p>Author's: <a href="https://www.linkedin.com/in/adam-james-stankiewicz/" target="_blank">Adam Stankiewicz</a> & 
                 <a href="https://www.linkedin.com/in/rocco-leporace-619108296/" target="_blank">Rocco Leporace</a></p>
