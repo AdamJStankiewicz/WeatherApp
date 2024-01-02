@@ -19,19 +19,12 @@ body {
     box-shadow: -1px 1px 5px #000000;
 }
 
-.container {
-    text-align: center;
-}
-
-.titleCont{
-    transform: translate(-15%,0%);
-}
-
 .title{
     font-family: mont;
     font-size: 96px;
     color: white;
     text-shadow: -1px 1px 5px #000000;
+    transform: translate(-20%,0%);
 }
 
 .footer{
@@ -54,7 +47,7 @@ body {
     border: None;
     font-family: mont;
     height: 80px;
-    width: 440px;
+    width: 510px;
 
     scale: 100%;
 }
@@ -68,7 +61,8 @@ body {
     height: 80px;
     width: 400px;
     border-radius: 16px;
-    margin-bottom: 50px;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .state{
@@ -83,37 +77,23 @@ body {
     margin-bottom: 50px;
 }
 
-.cloud{
+.icon{
     animation-name: float;
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
 
     position: absolute;
-    transform: translate(-5%,0%);
-}
-
-.sun{
-    animation-name: float2;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-    transform-origin: left;
-    position: absolute;
-    transform: translate(0%,0%);
+    transform: translate(110%,30%);
 }
 
 .output1{
     font-family: mont;
-    font-size: 36px;
+    font-size: 48px;
     color: white;
+    text-shadow: -1px 1px 5px #000000;
 }
 
 @keyframes float{
-    0% {top: -50px;}
-    50% {top: -55px;}
-    100% {top: -50px;}
-}
-
-@keyframes float2{
     0% {top: -50px;}
     50% {top: -60px;}
     100% {top: -50px;}

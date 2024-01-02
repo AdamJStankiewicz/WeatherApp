@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>Gwizz</title>
+    <link rel="icon" type="image/x-icon" href="images/riboicon.png">
+    <title>Ribo</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style2.css">
 </head>
@@ -10,20 +11,16 @@
 
 <body>
     <div class="container">
-        <div class="titleCont">
-            <h1 class="title" >Weather
-                <img class="sun" src="images/suns.png" width = "300">
-                <img class="cloud" src="images/clouds.png" width = "300">
-            </h1>
-        </div>
+        <h1 class="title" >Weather</h1>
+        <img id="img" class="icon" src="images/RainCloud.png" width = "300">
         <div class="textInput">
             <input class="city" type="text" id="city" name="city">
             <input class="state" type="text" id="state" name="state" maxlength="2">
         </div>
         <button class="button" id="wtherBtn" onmousedown="weatherClick(true)" onmouseup="weatherClick(false)">Get Weather</button>
-        <div class = "output1" id = "temperature"></div>
-        <div class = "output2" id = "latlong"></div>
-
+        <div class="output"></div>
+            <div class = "output1" id = "temperature"></div>
+        </div>
         <div class="footer">
             <p>Author's: <a href="https://www.linkedin.com/in/adam-james-stankiewicz/" target="_blank">Adam Stankiewicz</a> & 
                 <a href="https://www.linkedin.com/in/rocco-leporace-619108296/" target="_blank">Rocco Leporace</a></p>
