@@ -24,7 +24,8 @@ body {
     font-size: 96px;
     color: white;
     text-shadow: -1px 1px 5px #000000;
-    transform: translate(-20%,0%);
+    transform: translate(-10%,50%);
+
 }
 
 .footer{
@@ -81,9 +82,9 @@ body {
     animation-name: float;
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
-
     position: absolute;
-    transform: translate(110%,30%);
+    transform: translate(160%,50%);
+    filter: invert(100%);
 }
 
 .output1{
@@ -91,6 +92,7 @@ body {
     font-size: 48px;
     color: white;
     text-shadow: -1px 1px 5px #000000;
+    text-align: center;
 }
 
 @keyframes float{

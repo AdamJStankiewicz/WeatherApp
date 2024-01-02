@@ -43,32 +43,10 @@ async function getWeatherAuto(lat,long){
 
     document.getElementById("temperature").textContent = "The current temperature is: " +  curTemperature + "F";
 
-    let weatherType = obj.weather[0].main;
-    
-    //find pics for the following
-    switch (weatherType) {
-        case "Thunderstorm":
-            //img = (insert url)
-            break;
-        case "Drizzle":
-            break;
-        case "Rain":
-            let img = "images/RainCloud.png"
-            break;
-        case "Snow":
-            break;
-        case "Clear":
-            break;
-        case "Clouds":
-            break;
-        default:
-            //shows normal logo if its not the other weather types
-            break;
-      }
+    let weatherType = obj["weather"][0]["main"];
+    setIcon(weatherType);
     }
     
-
-
 async function getWeatherManual(){
     var cityInput = document.getElementById("city").value;
     var stateInput = document.getElementById("state").value.toUpperCase();
@@ -94,6 +72,9 @@ async function getWeatherManual(){
 
     document.getElementById("temperature").textContent = "The current temperature is: " +  curTemperature + "F";
     //document.getElementById("latlong").textContent = "Lat: " + lat + " Long: " + long;
+    
+    let weatherType = obj["weather"][0]["main"];
+    setIcon(weatherType);
 }
 
 async function getCoordinates(city,state) {
@@ -133,3 +114,28 @@ function fillInfo(city,state){
     stateInput.setAttribute('value',state);
 }
 
+function setIcon(weatherType){
+    switch (weatherType) {
+        case "Thunderstorm":
+            document.getElementById("img").src = "images/wi-thunderstorm.svg";
+            break;
+        case "Drizzle":
+            document.getElementById("img").src = "images/wi-showers.svg";
+            break;
+        case "Rain":
+            document.getElementById("img").src = "images/wi-showers.svg";
+            break;
+        case "Snow":
+            document.getElementById("img").src = "images/wi-snow.svg";
+            break;
+        case "Clear":
+            document.getElementById("img").src = "images/wi-day-sunny.svg";
+            break;
+        case "Clouds":
+            document.getElementById("img").src = "images/wi-cloudy.svg";
+            break;
+        default:
+            document.getElementById("img").src = "images/wi-cloud.svg";
+            break;
+      }
+}
