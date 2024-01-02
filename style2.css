@@ -20,6 +20,9 @@ body {
     box-shadow: -1px 1px 5px #000000;
 }
 
+.container{
+    scale: 150%;
+}
 
 .title{
     font-family: mont;
@@ -32,7 +35,7 @@ body {
 
 .footer{
     font-family: mont;
-    font-size: 20px;
+    font-size: 150%;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -40,6 +43,7 @@ body {
     background-color: #00b8c9;
     color: black;
     text-align: center;
+    
 }
 
 .wtherBtn {
