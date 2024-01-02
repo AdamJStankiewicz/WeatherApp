@@ -167,6 +167,6 @@ function toggleUnit(dwn){
         localStorage['unit'] = unit;
         localStorage['unitSymbol'] = unitSymbol;
 
-        getWeatherManual();
+        if(curTemperature) getWeatherManual();
     }
 }

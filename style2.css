@@ -26,7 +26,7 @@ body {
     font-size: 96px;
     color: white;
     text-shadow: -1px 1px 5px #000000;
-    transform: translate(-10%,50%);
+    transform: translate(0%,50%);
 
 }
 
@@ -51,20 +51,18 @@ body {
     border: None;
     font-family: mont;
     height: 80px;
-    width: 180px;
+    width: 160px;
 }
 
 .unitBtn{
-    margin-top: 3%;
     color: rgb(0, 0, 0);
-    font-size: 48px;
+    font-size: 32px;
     background-color: #00b8c9;
     border-radius: 16px;
     border: None;
     font-family: mont;
-    height: 80px;
-    width: 80px;
-    transform: translate(10%,-26%);
+    height: 60px;
+    width: 60px;
 }
 
 .city{
@@ -89,7 +87,6 @@ body {
     width: 100px;
     border-radius: 16px;
     margin-top: 5%;
-    transform: translate(10%,0%);
 }
 
 .icon{
@@ -97,7 +94,7 @@ body {
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
     position: absolute;
-    transform: translate(160%,50%);
+    transform: translate(180%,50%);
     filter: invert(100%);
 }
 

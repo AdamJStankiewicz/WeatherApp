@@ -3,7 +3,7 @@
 
 <head>
     <link rel="icon" type="image/x-icon" href="images/riboicon.png">
-    <title>Ribo</title>
+    <title>RIBO</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style2.css">
 </head>
@@ -16,15 +16,18 @@
         <div class="textInput">
             <input class="city" type="text" id="city" name="city">
             <input class="state" type="text" id="state" name="state" maxlength="2">
+            <button class="unitBtn" id="unitBtn" onmousedown="toggleUnit(true)" onmouseup="toggleUnit(false)">F</button>
+            <div> </div>
         </div>
         
-        <div class = "buttons"></div>
-            <button class="wtherBtn" id="wtherBtn" onmousedown="weatherClick(true)" onmouseup="weatherClick(false)">
-                <img class="reload" id="reload" src="images/reload-symbol.svg" width = "75">
-            </button>
-            <button class="unitBtn" id="unitBtn" onmousedown="toggleUnit(true)" onmouseup="toggleUnit(false)">F</button>
-            <div class = "output1" id = "temperature"></div>
-        </div>
+        
+        <button class="wtherBtn" id="wtherBtn" onmousedown="weatherClick(true)" onmouseup="weatherClick(false)">
+            <img class="reload" id="reload" src="images/reload-symbol.svg" width = "75">
+            
+        </button>
+        
+        <div class = "output1" id = "temperature"></div>
+ 
 
         <div class="footer">
             <p>Author's: <a href="https://www.linkedin.com/in/adam-james-stankiewicz/" target="_blank">Adam Stankiewicz</a> & 
