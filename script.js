@@ -1,5 +1,5 @@
 var curTemperature;
-var geo = false;
+var geo = true;
 var unit = "imperial";
 var unitSymbol = "F";
 
