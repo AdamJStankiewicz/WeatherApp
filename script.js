@@ -1,6 +1,4 @@
 var curTemperature;
-var minTemperature;
-var maxTemperature;
 
 var geo = true;
 var unit = "imperial";
@@ -56,12 +54,8 @@ async function getWeatherAuto(lat,long){
     obj = await res.json();
 
     curTemperature = Math.round(obj["main"]["temp"]);
-    minTemperature = Math.round(obj["main"]["temp_min"]);
-    maxTemperature = Math.round(obj["main"]["temp_max"]);
 
     document.getElementById("temperature").textContent = "Current: " + curTemperature + unitSymbol;
-    document.getElementById("max").textContent = "High: " + maxTemperature + unitSymbol;
-    document.getElementById("min").textContent = "Low: " + minTemperature + unitSymbol;
 
 
     let weatherType = obj["weather"][0]["main"];
@@ -90,15 +84,8 @@ async function getWeatherManual(){
     obj = await res.json();
 
     curTemperature = Math.round(obj["main"]["temp"]);
-    minTemperature = Math.round(obj["main"]["temp_min"]);
-    maxTemperature = Math.round(obj["main"]["temp_max"]);
 
     document.getElementById("temperature").textContent = "Current: " + curTemperature + unitSymbol;
-    document.getElementById("max").textContent = "High: " + maxTemperature + unitSymbol;
-    document.getElementById("min").textContent = "Low: " + minTemperature + unitSymbol;
-
-
-    //document.getElementById("latlong").textContent = "Lat: " + lat + " Long: " + long;
     
     let weatherType = obj["weather"][0]["main"];
     setIcon(weatherType);

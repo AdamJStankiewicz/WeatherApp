@@ -21,7 +21,8 @@ body {
 }
 
 .container{
-    scale: 120%;
+    scale: 140%;
+    transform: translate(0%,5%);
 }
 
 .title{
@@ -64,10 +65,10 @@ body {
     border-radius: 16px;
     border: None;
     font-family: mont;
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
 
-    transform: translate(0%,-26%);
+    transform: translate(0%,-33%);
 }
 
 .city{
@@ -105,15 +106,7 @@ body {
 
 .output1{
     font-family: mont;
-    font-size: 72px;
-    color: white;
-    text-shadow: -1px 1px 5px #000000;
-    text-align: center;
-}
-
-.output2{
-    font-family: mont;
-    font-size: 48px;
+    font-size: 96px;
     color: white;
     text-shadow: -1px 1px 5px #000000;
     text-align: center;
