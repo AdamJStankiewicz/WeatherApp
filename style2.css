@@ -1,9 +1,9 @@
-@font-face {
+@font-face{
     font-family: mont;
     src: url(fonts/Mont-HeavyDEMO.otf);
 }
 
-body {
+body{
     font-family: mont;
     margin: 0;
     padding: 0;
@@ -21,22 +21,21 @@ body {
 }
 
 .container{
-    scale: 140%;
-    transform: translate(0%,5%);
+    scale: 135%;
+    transform: translate(0%, 2.5%);
 }
 
 .title{
     font-family: mont;
-    font-size: 96px;
+    font-size: 91.2px;
     color: white;
     text-shadow: -1px 1px 5px #000000;
-    transform: translate(0%,50%);
-
+    transform: translate(0%, 47.5%);
 }
 
 .footer{
     font-family: mont;
-    font-size: 150%;
+    font-size: 142.5%;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -44,55 +43,55 @@ body {
     background-color: #00b8c9;
     color: black;
     text-align: center;
-    
 }
-.wtherBtn {
-    margin-top: 3%;
+
+.wtherBtn{
+    margin-top: 2.85%;
     color: rgb(0, 0, 0);
-    font-size: 48px;
+    font-size: 45.6px;
     background-color: #00b8c9;
-    border-radius: 16px;
+    border-radius: 15.2px;
     border: None;
     font-family: mont;
-    height: 80px;
-    width: 160px;
+    height: 76px;
+    width: 152px;
 }
 
 .unitBtn{
     color: rgb(0, 0, 0);
-    font-size: 32px;
+    font-size: 30.4px;
     background-color: #00b8c9;
-    border-radius: 16px;
+    border-radius: 15.2px;
     border: None;
     font-family: mont;
-    height: 80px;
-    width: 80px;
+    height: 76px;
+    width: 76px;
 
-    transform: translate(0%,-33%);
+    transform: translate(0%, -31.35%);
 }
 
 .city{
     text-align: center;
     border: None;
     font-family: mont;
-    font-size: 48px;
+    font-size: 45.6px;
     color: rgb(0, 0, 0);
-    height: 80px;
-    width: 400px;
-    border-radius: 16px;
-    margin-top: 5%;
+    height: 76px;
+    width: 380px;
+    border-radius: 15.2px;
+    margin-top: 4.75%;
 }
 
 .state{
     text-align: center;
     border: None;
     font-family: mont;
-    font-size: 48px;
+    font-size: 45.6px;
     color: rgb(0, 0, 0);
-    height: 80px;
-    width: 100px;
-    border-radius: 16px;
-    margin-top: 5%;
+    height: 76px;
+    width: 95px;
+    border-radius: 15.2px;
+    margin-top: 4.75%;
 }
 
 .icon{
@@ -100,25 +99,25 @@ body {
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
     position: absolute;
-    transform: translate(180%,50%);
+    transform: translate(171%, 47.5%);
     filter: invert(100%);
 }
 
 .output1{
     font-family: mont;
-    font-size: 96px;
+    font-size: 91.2px;
     color: white;
     text-shadow: -1px 1px 5px #000000;
     text-align: center;
 }
 
 @keyframes float{
-    0% {top: -50px;}
-    50% {top: -60px;}
-    100% {top: -50px;}
+    0% {top: -47.5px;}
+    50% {top: -57px;}
+    100% {top: -47.5px;}
 }
 
-.animate {
+.animate{
     animation-name: btnDown;
     animation-duration: 0.25s;
 }
@@ -129,9 +128,9 @@ body {
 }
 
 @keyframes btnDown{
-    0% {scale: 100%;}
-    50% {scale: 75%;}
-    100% {scale: 100%;}
+    0% {scale: 95%;}
+    50% {scale: 71.25%;}
+    100% {scale: 95%;}
 }
 
 @keyframes spin{
