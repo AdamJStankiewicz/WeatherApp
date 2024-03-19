@@ -3,6 +3,7 @@ var curTemperature;
 var geo = true;
 var unit = "imperial";
 var unitSymbol = "F";
+var reverseSymbol = {"F" : "C", "C" : "F"}
 
 function init() {
     var city = localStorage['city'];
@@ -17,7 +18,7 @@ function init() {
     if(localStorage['unit'] && localStorage['unitSymbol']){
         unit = localStorage['unit'];
         unitSymbol = localStorage['unitSymbol'];
-        document.getElementById("unitBtn").textContent = unitSymbol;
+        document.getElementById("unitBtn").textContent = reverseSymbol[unitSymbol];
     }
     
     if(!city && !state) {
